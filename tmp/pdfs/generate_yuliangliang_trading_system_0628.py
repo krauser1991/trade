@@ -19,8 +19,8 @@ from reportlab.platypus import (
 )
 
 
-SRC = Path("俞亮亮交易体系0628版.md")
-OUT = "output/pdf/俞亮亮的交易体系0628版.pdf"
+SRC = Path("俞亮亮交易体系20260704版.md")
+OUT = "output/pdf/俞亮亮的交易体系20260704版.pdf"
 FONT = "/System/Library/Fonts/Supplemental/Arial Unicode.ttf"
 
 
@@ -198,7 +198,7 @@ def footer(canvas, doc):
     canvas.saveState()
     canvas.setFont("STHeiti", 8)
     canvas.setFillColor(colors.HexColor("#6b7280"))
-    canvas.drawString(18 * mm, 12 * mm, "俞亮亮的交易体系0628版 | 项目总结合并版")
+    canvas.drawString(18 * mm, 12 * mm, "俞亮亮的交易体系20260704版 | 项目总结合并版")
     canvas.drawRightString(192 * mm, 12 * mm, str(doc.page))
     canvas.restoreState()
 
