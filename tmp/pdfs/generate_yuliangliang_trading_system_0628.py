@@ -122,6 +122,7 @@ def escape(text):
 
 
 def inline(text):
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
     text = escape(text)
     text = re.sub(r"\*\*(.*?)\*\*", r"<b>\1</b>", text)
     text = re.sub(r"`([^`]+)`", r"<font color='#334155'>\1</font>", text)
