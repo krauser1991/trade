@@ -1,75 +1,165 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
   <title id="title">资金曲线</title>
-  <desc id="desc">2026-06-20 至 2026-07-07 总资产从 512740.22 元变化到 507355.00 元，纵坐标从 500000 元开始。</desc>
+  <desc id="desc">2026-06-20 至 2026-07-15，展示券商总资产与剔除7月8日5万元、7月13日8万元、7月14日10万元入金后的调整资产。</desc>
   <rect width="980" height="560" fill="#ffffff"/>
   <text x="56" y="52" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="28" font-weight="700" fill="#202124">资金曲线</text>
   <text x="56" y="82" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" fill="#6b7280">单位：人民币元 ｜ 数据来源：equity_curve.csv</text>
 
   <line x1="92" y1="448" x2="912" y2="448" stroke="#d1d5db" stroke-width="1"/>
   <line x1="92" y1="116" x2="92" y2="448" stroke="#d1d5db" stroke-width="1"/>
-  <line x1="92" y1="365" x2="912" y2="365" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="435" x2="912" y2="435" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="422" x2="912" y2="422" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="410" x2="912" y2="410" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="397" x2="912" y2="397" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="384" x2="912" y2="384" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="371" x2="912" y2="371" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="359" x2="912" y2="359" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="346" x2="912" y2="346" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="333" x2="912" y2="333" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="320" x2="912" y2="320" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="308" x2="912" y2="308" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="295" x2="912" y2="295" stroke="#eef2f7" stroke-width="1"/>
   <line x1="92" y1="282" x2="912" y2="282" stroke="#eef2f7" stroke-width="1"/>
-  <line x1="92" y1="199" x2="912" y2="199" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="269" x2="912" y2="269" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="256" x2="912" y2="256" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="244" x2="912" y2="244" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="231" x2="912" y2="231" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="218" x2="912" y2="218" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="205" x2="912" y2="205" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="193" x2="912" y2="193" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="180" x2="912" y2="180" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="167" x2="912" y2="167" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="154" x2="912" y2="154" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="142" x2="912" y2="142" stroke="#eef2f7" stroke-width="1"/>
+  <line x1="92" y1="129" x2="912" y2="129" stroke="#eef2f7" stroke-width="1"/>
   <line x1="92" y1="116" x2="912" y2="116" stroke="#eef2f7" stroke-width="1"/>
-  <text x="28" y="453" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">50.0万</text>
-  <text x="28" y="370" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">51.0万</text>
-  <text x="28" y="287" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">52.0万</text>
-  <text x="28" y="204" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">53.0万</text>
-  <text x="28" y="121" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">54.0万</text>
+  <text x="28" y="453" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">45.0万</text>
+  <text x="28" y="440" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">46.0万</text>
+  <text x="28" y="427" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">47.0万</text>
+  <text x="28" y="415" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">48.0万</text>
+  <text x="28" y="402" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">49.0万</text>
+  <text x="28" y="389" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">50.0万</text>
+  <text x="28" y="376" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">51.0万</text>
+  <text x="28" y="364" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">52.0万</text>
+  <text x="28" y="351" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">53.0万</text>
+  <text x="28" y="338" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">54.0万</text>
+  <text x="28" y="325" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">55.0万</text>
+  <text x="28" y="313" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">56.0万</text>
+  <text x="28" y="300" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">57.0万</text>
+  <text x="28" y="287" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">58.0万</text>
+  <text x="28" y="274" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">59.0万</text>
+  <text x="28" y="261" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">60.0万</text>
+  <text x="28" y="249" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">61.0万</text>
+  <text x="28" y="236" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">62.0万</text>
+  <text x="28" y="223" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">63.0万</text>
+  <text x="28" y="210" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">64.0万</text>
+  <text x="28" y="198" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">65.0万</text>
+  <text x="28" y="185" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">66.0万</text>
+  <text x="28" y="172" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">67.0万</text>
+  <text x="28" y="159" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">68.0万</text>
+  <text x="28" y="147" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">69.0万</text>
+  <text x="28" y="134" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">70.0万</text>
+  <text x="28" y="121" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">71.0万</text>
+  <line x1="92" y1="129" x2="912" y2="129" stroke="#ef4444" stroke-width="1.9" stroke-dasharray="6 5" opacity="0.9"/>
+  <text x="100" y="121" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#ef4444">总资产新高 700,064.44（2026-07-14）</text>
+  <line x1="92" y1="337" x2="912" y2="337" stroke="#2563eb" stroke-width="1.9" stroke-dasharray="6 5" opacity="0.9"/>
+  <text x="100" y="355" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="700" fill="#2563eb">剔除入金新高 536,701.82（2026-06-30）</text>
 
-  <polyline points="92,342 160,198 229,241 297,198 365,204 434,176 502,166 570,143 639,187 707,428 775,347 844,354 912,387" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="92" cy="342" r="7" fill="#ef4444"/>
-  <circle cx="92" cy="342" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="160" cy="198" r="7" fill="#ef4444"/>
-  <circle cx="160" cy="198" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="229" cy="241" r="7" fill="#2563eb"/>
-  <circle cx="229" cy="241" r="13" fill="#2563eb" opacity="0.14"/>
-  <circle cx="297" cy="198" r="7" fill="#ef4444"/>
-  <circle cx="297" cy="198" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="365" cy="204" r="7" fill="#2563eb"/>
-  <circle cx="365" cy="204" r="13" fill="#2563eb" opacity="0.14"/>
-  <circle cx="434" cy="176" r="7" fill="#ef4444"/>
-  <circle cx="434" cy="176" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="502" cy="166" r="7" fill="#ef4444"/>
-  <circle cx="502" cy="166" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="570" cy="143" r="7" fill="#ef4444"/>
-  <circle cx="570" cy="143" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="639" cy="187" r="7" fill="#2563eb"/>
-  <circle cx="639" cy="187" r="13" fill="#2563eb" opacity="0.14"/>
-  <circle cx="707" cy="428" r="7" fill="#2563eb"/>
-  <circle cx="707" cy="428" r="13" fill="#2563eb" opacity="0.14"/>
-  <circle cx="775" cy="347" r="7" fill="#ef4444"/>
-  <circle cx="775" cy="347" r="13" fill="#ef4444" opacity="0.14"/>
-  <circle cx="844" cy="354" r="7" fill="#2563eb"/>
-  <circle cx="844" cy="354" r="13" fill="#2563eb" opacity="0.14"/>
-  <circle cx="912" cy="387" r="7" fill="#2563eb"/>
-  <circle cx="912" cy="387" r="13" fill="#2563eb" opacity="0.14"/>
+  <polyline points="92,368 138,346 183,352 229,346 274,347 320,342 365,341 411,337 456,344 502,381 548,369 593,370 639,375 684,335 730,299 775,274 821,228 866,129 912,133" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="92,368 138,346 183,352 229,346 274,347 320,342 365,341 411,337 456,344 502,381 548,369 593,370 639,375 684,399 730,363 775,338 821,394 866,422 912,426" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 6"/>
+  <circle cx="92" cy="368" r="7" fill="#ef4444"/>
+  <circle cx="92" cy="368" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="138" cy="346" r="7" fill="#ef4444"/>
+  <circle cx="138" cy="346" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="183" cy="352" r="7" fill="#2563eb"/>
+  <circle cx="183" cy="352" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="229" cy="346" r="7" fill="#ef4444"/>
+  <circle cx="229" cy="346" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="274" cy="347" r="7" fill="#2563eb"/>
+  <circle cx="274" cy="347" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="320" cy="342" r="7" fill="#ef4444"/>
+  <circle cx="320" cy="342" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="365" cy="341" r="7" fill="#ef4444"/>
+  <circle cx="365" cy="341" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="411" cy="337" r="7" fill="#ef4444"/>
+  <circle cx="411" cy="337" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="456" cy="344" r="7" fill="#2563eb"/>
+  <circle cx="456" cy="344" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="502" cy="381" r="7" fill="#2563eb"/>
+  <circle cx="502" cy="381" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="548" cy="369" r="7" fill="#ef4444"/>
+  <circle cx="548" cy="369" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="593" cy="370" r="7" fill="#2563eb"/>
+  <circle cx="593" cy="370" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="639" cy="375" r="7" fill="#2563eb"/>
+  <circle cx="639" cy="375" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="684" cy="335" r="7" fill="#2563eb"/>
+  <circle cx="684" cy="335" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="730" cy="299" r="7" fill="#ef4444"/>
+  <circle cx="730" cy="299" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="775" cy="274" r="7" fill="#ef4444"/>
+  <circle cx="775" cy="274" r="13" fill="#ef4444" opacity="0.14"/>
+  <circle cx="821" cy="228" r="7" fill="#2563eb"/>
+  <circle cx="821" cy="228" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="866" cy="129" r="7" fill="#2563eb"/>
+  <circle cx="866" cy="129" r="13" fill="#2563eb" opacity="0.14"/>
+  <circle cx="912" cy="133" r="7" fill="#2563eb"/>
+  <circle cx="912" cy="133" r="13" fill="#2563eb" opacity="0.14"/>
+  <rect x="679" y="394" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="675" y="390" width="18" height="18" rx="4" fill="#2563eb" opacity="0.12"/>
+  <rect x="725" y="358" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="721" y="354" width="18" height="18" rx="4" fill="#2563eb" opacity="0.12"/>
+  <rect x="770" y="333" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="766" y="329" width="18" height="18" rx="4" fill="#2563eb" opacity="0.12"/>
+  <rect x="816" y="389" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="812" y="385" width="18" height="18" rx="4" fill="#2563eb" opacity="0.12"/>
+  <rect x="861" y="417" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="857" y="413" width="18" height="18" rx="4" fill="#2563eb" opacity="0.12"/>
+  <rect x="907" y="421" width="10" height="10" rx="2" fill="#2563eb"/>
+  <rect x="903" y="417" width="18" height="18" rx="4" fill="#2563eb" opacity="0.12"/>
   <text x="68" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-20</text>
-  <text x="136" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-22</text>
-  <text x="205" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-23</text>
-  <text x="273" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-24</text>
-  <text x="341" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-25</text>
-  <text x="410" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-26</text>
-  <text x="478" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-29</text>
-  <text x="546" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-30</text>
-  <text x="615" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-01</text>
-  <text x="683" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-02</text>
-  <text x="751" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-03</text>
-  <text x="820" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-06</text>
-  <text x="888" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-07</text>
-  <text x="378" y="160" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#ef4444">532,819.72</text>
-  <text x="378" y="180" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">低仓位新高</text>
-  <text x="514" y="127" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#ef4444">536,701.82</text>
-  <text x="514" y="147" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">6月收官新高</text>
-  <text x="651" y="412" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">502,422.70</text>
-  <text x="651" y="432" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">满仓大回撤</text>
-  <text x="719" y="331" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#ef4444">512,218.71</text>
-  <text x="719" y="351" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">回血降仓</text>
-  <text x="790" y="371" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">507,355.00</text>
-  <text x="790" y="391" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280"></text>
+  <text x="114" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-22</text>
+  <text x="159" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-23</text>
+  <text x="205" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-24</text>
+  <text x="250" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-25</text>
+  <text x="296" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-26</text>
+  <text x="341" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-29</text>
+  <text x="387" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">06-30</text>
+  <text x="432" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-01</text>
+  <text x="478" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-02</text>
+  <text x="524" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-03</text>
+  <text x="569" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-06</text>
+  <text x="615" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-07</text>
+  <text x="660" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-08</text>
+  <text x="706" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-09</text>
+  <text x="751" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-10</text>
+  <text x="797" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-13</text>
+  <text x="842" y="506" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-14</text>
+  <text x="888" y="484" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="11" fill="#374151">07-15</text>
+  <text x="264" y="326" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#ef4444">532,819.72</text>
+  <text x="264" y="346" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">低仓位新高</text>
+  <text x="355" y="321" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#ef4444">536,701.82</text>
+  <text x="355" y="341" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">6月收官新高</text>
+  <text x="446" y="365" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">502,422.70</text>
+  <text x="446" y="385" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">满仓大回撤</text>
+  <text x="628" y="319" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">538,649.09</text>
+  <text x="628" y="339" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">入金5万后回撤</text>
+  <text x="719" y="258" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#ef4444">586,431.19</text>
+  <text x="719" y="278" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">总盈亏转正</text>
+  <text x="765" y="212" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">622,634.28</text>
+  <text x="765" y="232" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">入金8万后大回撤</text>
+  <text x="790" y="113" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">700,064.44</text>
+  <text x="790" y="133" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">入金10万仍回撤</text>
+  <text x="790" y="117" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#2563eb">696,872.55</text>
+  <text x="790" y="137" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">恢复标准券但仍亏</text>
 
-  <rect x="704" y="34" width="214" height="76" rx="8" fill="#fff7f7" stroke="#fecaca"/>
+  <rect x="704" y="30" width="228" height="102" rx="8" fill="#fff7f7" stroke="#fecaca"/>
   <text x="724" y="62" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#6b7280">当前记录</text>
-  <text x="724" y="88" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="700" fill="#2563eb">507,355.00</text>
-  <text x="92" y="524" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9ca3af">说明：当前纵坐标从 50 万到 54 万，2026-07-07 券商仓位 99.9%，当日参考盈亏 -3,729.47。</text>
+  <text x="724" y="88" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="700" fill="#2563eb">696,872.55</text>
+  <text x="724" y="112" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#2563eb">剔除入金：466,872.55</text>
+  <line x1="56" y1="100" x2="88" y2="100" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+  <text x="98" y="105" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#374151">券商总资产</text>
+  <line x1="190" y1="100" x2="222" y2="100" stroke="#2563eb" stroke-width="3" stroke-dasharray="9 6" stroke-linecap="round"/>
+  <text x="232" y="105" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#374151">剔除累计入金</text>
+  <text x="92" y="524" font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#9ca3af">说明：蓝色虚线扣除7月8日50,000元、7月13日80,000元和7月14日100,000元入金；2026-07-15 调整后资产 466,872.55。</text>
 </svg>
