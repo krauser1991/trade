@@ -51,7 +51,7 @@ def validate_review(data: dict[str, Any]) -> list[str]:
         errors.append(f"risk_notice must contain: {REQUIRED_NOTICE}")
     if "summary" in data and not isinstance(data["summary"], dict):
         errors.append("summary must be an object")
-    for list_field in ["metrics", "market_review", "themes", "stocks", "discipline"]:
+    for list_field in ["metrics", "market_review", "themes", "hot_themes", "limit_up_ladder", "stocks", "discipline"]:
         if list_field in data and not isinstance(data[list_field], list):
             errors.append(f"{list_field} must be a list")
     if "next_day_plan" in data and not isinstance(data["next_day_plan"], dict):
@@ -126,6 +126,41 @@ def render_theme_rows(themes: list[dict[str, Any]]) -> str:
             f"<td class=\"hot\">{esc(item.get('strength'))}</td>"
             f"<td>{esc(item.get('core'))}</td>"
             f"<td>{esc(item.get('strategy'))}</td>"
+            "</tr>"
+        )
+    return "\n".join(rows)
+
+
+def render_hot_theme_rows(themes: list[dict[str, Any]]) -> str:
+    if not themes:
+        return '<tr><td colspan="6" class="muted">未提供</td></tr>'
+    rows = []
+    for item in themes:
+        rows.append(
+            "<tr>"
+            f"<td class=\"hot\">{esc(item.get('rank'))}</td>"
+            f"<td class=\"cyan\">{esc(item.get('name'))}</td>"
+            f"<td>{esc(item.get('heat'))}</td>"
+            f"<td>{esc(item.get('leaders'))}</td>"
+            f"<td>{esc(item.get('driver'))}</td>"
+            f"<td>{esc(item.get('review'))}</td>"
+            "</tr>"
+        )
+    return "\n".join(rows)
+
+
+def render_ladder_rows(ladder: list[dict[str, Any]]) -> str:
+    if not ladder:
+        return '<tr><td colspan="5" class="muted">未提供</td></tr>'
+    rows = []
+    for item in ladder:
+        rows.append(
+            "<tr>"
+            f"<td class=\"hot\">{esc(item.get('height'))}</td>"
+            f"<td class=\"cyan\">{esc(item.get('stocks'))}</td>"
+            f"<td>{esc(item.get('theme'))}</td>"
+            f"<td>{esc(item.get('status'))}</td>"
+            f"<td>{esc(item.get('tomorrow'))}</td>"
             "</tr>"
         )
     return "\n".join(rows)
@@ -211,6 +246,8 @@ def render_review(data: dict[str, Any], template: str) -> str:
         "summary_points": render_list(summary.get("points", [])),
         "market_sections": render_market_sections(data.get("market_review", [])),
         "theme_rows": render_theme_rows(data.get("themes", [])),
+        "hot_theme_rows": render_hot_theme_rows(data.get("hot_themes", [])),
+        "limit_up_ladder_rows": render_ladder_rows(data.get("limit_up_ladder", [])),
         "stock_rows": render_stock_rows(data.get("stocks", [])),
         "account_panel": render_account_panel(data.get("account", {})),
         "trade_rows": render_trade_rows(data.get("trades", [])),
