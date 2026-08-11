@@ -43,3 +43,17 @@ python3 scripts/render_daily_review.py data/daily/YYYY-MM-DD-market.json
 node scripts/verify_daily_review_html.js output/html/YYYY-MM-DD-标题.html
 node scripts/screenshot_daily_review.js output/html/YYYY-MM-DD-标题.html
 ```
+
+## 热门题材与连板梯队抓取
+
+优先用同花顺/iFinD 授权数据；没有授权时，使用 AkShare 涨停池兜底生成热门行业和连板梯队：
+
+```bash
+python3 scripts/fetch_daily_hotspots.py YYYYMMDD --output data/daily/YYYY-MM-DD-hotspots.json
+```
+
+注意：
+
+- `stock_board_concept_name_ths` 可接入同花顺概念列表；
+- `stock_zt_pool_em` 是涨停池兜底口径，不等同于同花顺官方每日复盘；
+- 如果最终报告使用兜底口径，正文必须写清楚数据来源。

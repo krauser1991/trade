@@ -219,6 +219,7 @@ output/images/YYYY-MM-DD-主题.png
 第一阶段本地命令：
 
 ```bash
+python3 scripts/fetch_daily_hotspots.py 20260811 --output data/daily/2026-08-11-hotspots.json
 python3 scripts/render_daily_review.py data/daily/sample-market.json
 node scripts/verify_daily_review_html.js output/html/2026-08-11-今日复盘与明日策略.html
 node scripts/screenshot_daily_review.js output/html/2026-08-11-今日复盘与明日策略.html
@@ -229,6 +230,7 @@ node scripts/screenshot_daily_review.js output/html/2026-08-11-今日复盘与�
 第一阶段边界：
 
 - 行情、题材、账户和成交数据先以人工确认或半自动整理为准；
+- 热门题材和连板梯队优先接同花顺/iFinD 授权数据；没有授权时使用 AkShare 涨停池兜底，并在正文标明口径；
 - 系统负责校验、渲染、视觉输出和截图；
 - 自动行情抓取、公告抓取和策略自动初判属于第二、三阶段能力。
 
