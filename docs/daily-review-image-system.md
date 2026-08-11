@@ -212,6 +212,22 @@ output/images/YYYY-MM-DD-主题.png
 - PNG 必须从 HTML 截图生成，不能手工拼图；
 - HTML 和 PNG 必须与 Markdown 内容一致，不能出现结论冲突。
 
+第一阶段本地命令：
+
+```bash
+python3 scripts/render_daily_review.py data/daily/sample-market.json
+node scripts/verify_daily_review_html.js output/html/2026-08-11-今日复盘与明日策略.html
+node scripts/screenshot_daily_review.js output/html/2026-08-11-今日复盘与明日策略.html
+```
+
+正式每日复盘时，将 `sample-market.json` 替换为当天的 `data/daily/YYYY-MM-DD-market.json`。
+
+第一阶段边界：
+
+- 行情、题材、账户和成交数据先以人工确认或半自动整理为准；
+- 系统负责校验、渲染、视觉输出和截图；
+- 自动行情抓取、公告抓取和策略自动初判属于第二、三阶段能力。
+
 ## 七、视觉规范
 
 整体风格参考用户提供的两张深色长图。

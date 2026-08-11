@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #141b2d;
+      --panel-2: #1b2438;
+      --line: #2a3652;
+      --text: #e8edf7;
+      --muted: #98a6bd;
+      --soft: #c7d1e4;
+      --red: #ff4d67;
+      --green: #25d48a;
+      --cyan: #22d3ee;
+      --gold: #f2b84b;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        linear-gradient(180deg, rgba(34, 43, 69, 0.96), rgba(8, 13, 24, 0.99) 170px),
+        var(--bg);
+    }
+
+    [data-review-root] {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      padding: 26px 18px 34px;
+    }
+
+    .topline {
+      height: 2px;
+      margin: 0 -18px 22px;
+      background: linear-gradient(90deg, transparent, var(--purple), var(--cyan), transparent);
+      opacity: 0.78;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6px 0 18px;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 24px;
+      border: 2px solid rgba(167, 139, 250, 0.72);
+      background: radial-gradient(circle at 50% 25%, #2d1741, #101827 64%);
+      box-shadow: 0 0 22px rgba(167, 139, 250, 0.42);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin: 8px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      border: 1px solid rgba(96, 165, 250, 0.42);
+      border-radius: 999px;
+      color: #cfe5ff;
+      background: rgba(96, 165, 250, 0.11);
+      font-size: 11px;
+      line-height: 1;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 10px 0 18px;
+    }
+
+    .metric {
+      min-height: 86px;
+      border-radius: 8px;
+      background: var(--panel-2);
+      border: 1px solid rgba(148, 163, 184, 0.13);
+      padding: 13px 12px;
+      box-shadow: 0 12px 24px var(--shadow);
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 9px;
+    }
+
+    .metric .value {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.1;
+      word-break: break-word;
+    }
+
+    .metric .change {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .tone-up .value, .tone-up .change { color: var(--red); }
+    .tone-down .value, .tone-down .change { color: var(--green); }
+    .tone-hot .value, .tone-hot .change { color: var(--gold); }
+    .tone-neutral .value { color: var(--cyan); }
+
+    .section {
+      margin-top: 16px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .section-title::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 18px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, var(--cyan), var(--purple));
+    }
+
+    .panel {
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 8px;
+      background: rgba(20, 27, 45, 0.96);
+      box-shadow: 0 14px 30px var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-body {
+      padding: 13px 15px;
+    }
+
+    .headline {
+      margin: 0 0 9px;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    p, li {
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.75;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mini-card {
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(148, 163, 184, 0.11);
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--cyan);
+    }
+
+    .mini-card p {
+      margin: 0;
+      font-size: 12px;
+    }
+
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      background: rgba(16, 23, 38, 0.72);
+    }
+
+    th, td {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+      padding: 10px 9px;
+      color: var(--soft);
+      font-size: 12px;
+      line-height: 1.55;
+      text-align: left;
+      vertical-align: top;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      color: #dbeafe;
+      background: rgba(96, 165, 250, 0.10);
+      font-weight: 700;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .up { color: var(--red); font-weight: 700; }
+    .down { color: var(--green); font-weight: 700; }
+    .hot { color: var(--gold); font-weight: 700; }
+    .cyan { color: var(--cyan); font-weight: 700; }
+    .muted { color: var(--muted); }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .plan-card {
+      border-radius: 8px;
+      padding: 12px 13px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .plan-card h3 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--gold);
+    }
+
+    .risk {
+      margin-top: 22px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.7;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    @media (max-width: 720px) {
+      [data-review-root] { padding: 20px 12px 28px; }
+      .topline { margin-left: -12px; margin-right: -12px; }
+      h1 { font-size: 20px; }
+      .logo { width: 62px; height: 62px; font-size: 20px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .review-grid, .plan-grid { grid-template-columns: 1fr; }
+      .metric .value { font-size: 19px; }
+      th, td { font-size: 11px; padding: 8px 7px; }
+      p, li { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main data-review-root>
+    <div class="hero">
+      <div class="logo">复</div>
+      <h1>{{title}}</h1>
+      <div class="subtitle">{{date}} · {{subtitle}}</div>
+      <div class="tags">{{tags}}</div>
+    </div>
+    <div class="topline"></div>
+
+    <section class="metrics" data-required="metrics">
+      {{metric_cards}}
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">一、今日结论</h2>
+      <div class="panel">
+        <div class="panel-body">
+          <p class="headline">{{summary_headline}}</p>
+          <ul>{{summary_points}}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">二、指数与情绪复盘</h2>
+      <div class="review-grid">{{market_sections}}</div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">三、主线题材</h2>
+      <div class="panel">
+        <table>
+          <thead><tr><th>题材</th><th>状态</th><th>强度</th><th>核心锚点</th><th>策略</th></tr></thead>
+          <tbody>{{theme_rows}}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">四、核心个股观察</h2>
+      <div class="panel">
+        <table>
+          <thead><tr><th>股票</th><th>角色</th><th>涨跌</th><th>信号</th><th>动作</th></tr></thead>
+          <tbody>{{stock_rows}}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">五、账户与交易复盘</h2>
+      <div class="panel">
+        <div class="panel-body">{{account_panel}}</div>
+        <table>
+          <thead><tr><th>时间</th><th>股票</th><th>方向</th><th>价格</th><th>金额</th><th>复盘</th></tr></thead>
+          <tbody>{{trade_rows}}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">六、持仓处理</h2>
+      <div class="panel">
+        <table>
+          <thead><tr><th>持仓</th><th>仓位</th><th>盈亏</th><th>计划</th></tr></thead>
+          <tbody>{{holding_rows}}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" data-required="next-day-plan">
+      <h2 class="section-title">七、明日策略</h2>
+      <div class="plan-grid">{{next_day_plan}}</div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">八、纪律口令</h2>
+      <div class="panel">
+        <div class="panel-body">
+          <ul>{{discipline_items}}</ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="risk" data-required="risk-notice">{{risk_notice}}</footer>
+  </main>
+</body>
+</html>
