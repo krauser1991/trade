@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大盘强弱与题材持续性判断框架</title>
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #141b2d;
+      --panel-2: #1b2438;
+      --line: #2b3652;
+      --text: #e9eef8;
+      --muted: #98a7bd;
+      --soft: #c9d4e8;
+      --profit: #ff4d67;
+      --loss: #28d28f;
+      --cyan: #24d5ef;
+      --gold: #f3b84b;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+    }
+    * { box-sizing: border-box; }
+    html {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        linear-gradient(180deg, rgba(34, 43, 69, 0.98), rgba(8, 13, 24, 0.99) 170px),
+        radial-gradient(circle at 16% 0%, rgba(255, 77, 103, 0.11), transparent 280px),
+        var(--bg);
+    }
+    [data-review-root] { width: min(860px, 100%); margin: 0 auto; padding: 24px 18px 34px; }
+    .hero { text-align: center; padding: 5px 0 18px; }
+    .logo {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 18px;
+      border: 2px solid rgba(255, 77, 103, 0.65);
+      background: radial-gradient(circle at 50% 22%, #4a1725, #101827 64%);
+      box-shadow: 0 0 24px rgba(255, 77, 103, 0.32);
+    }
+    h1 { margin: 0; font-size: 25px; line-height: 1.25; font-weight: 850; }
+    .subtitle { margin: 8px auto 0; color: var(--muted); font-size: 12px; line-height: 1.65; max-width: 720px; }
+    .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag {
+      border: 1px solid rgba(96, 165, 250, 0.42);
+      border-radius: 999px;
+      color: #cfe5ff;
+      background: rgba(96, 165, 250, 0.11);
+      font-size: 11px;
+      line-height: 1;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+    .topline {
+      height: 2px;
+      margin: 0 -18px 22px;
+      background: linear-gradient(90deg, transparent, var(--profit), var(--cyan), transparent);
+      opacity: 0.78;
+    }
+    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 10px 0 18px; }
+    .metric {
+      min-height: 88px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid rgba(114, 128, 160, 0.2);
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .metric .label { color: var(--muted); font-size: 11px; }
+    .metric .value { margin-top: 8px; font-size: 19px; font-weight: 850; line-height: 1.15; }
+    .metric .note { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .profit { color: var(--profit); }
+    .loss { color: var(--loss); }
+    .cyan { color: var(--cyan); }
+    .gold { color: var(--gold); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+    .section {
+      margin-top: 18px;
+      border-radius: 8px;
+      background: rgba(20, 27, 45, 0.94);
+      border: 1px solid rgba(114, 128, 160, 0.22);
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      background: rgba(27, 36, 56, 0.9);
+      border-bottom: 1px solid rgba(114, 128, 160, 0.18);
+    }
+    .bar { width: 4px; height: 18px; border-radius: 99px; background: linear-gradient(180deg, var(--profit), var(--gold)); }
+    .section-body { padding: 14px; }
+    .lead { margin: 0; color: var(--soft); font-size: 13px; line-height: 1.75; }
+    .quote {
+      margin-top: 12px;
+      border-left: 3px solid var(--gold);
+      padding: 9px 10px;
+      color: #f8dfae;
+      background: rgba(243, 184, 75, 0.08);
+      border-radius: 0 8px 8px 0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .card {
+      border-radius: 8px;
+      border: 1px solid rgba(114, 128, 160, 0.18);
+      background: rgba(8, 13, 24, 0.3);
+      padding: 12px;
+    }
+    .card b { display: block; margin-bottom: 6px; font-size: 13px; }
+    .card span { color: var(--soft); font-size: 12px; line-height: 1.65; }
+    .score .num { font-size: 18px; font-weight: 850; }
+    .score .state { margin-top: 6px; color: var(--muted); font-size: 11px; }
+    .table { width: 100%; border-collapse: collapse; font-size: 12px; line-height: 1.55; overflow: hidden; border-radius: 8px; }
+    .table th, .table td { padding: 9px 10px; border-bottom: 1px solid rgba(114, 128, 160, 0.16); text-align: left; vertical-align: top; }
+    .table th { color: #dbe6f6; background: rgba(27, 36, 56, 0.88); font-weight: 760; }
+    .table td { color: var(--soft); background: rgba(8, 13, 24, 0.23); }
+    .checklist { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .checklist li {
+      border-radius: 8px;
+      padding: 10px 11px;
+      background: rgba(8, 13, 24, 0.3);
+      border: 1px solid rgba(114, 128, 160, 0.16);
+      color: var(--soft);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.7;
+      border-top: 1px solid rgba(114, 128, 160, 0.18);
+      padding-top: 18px;
+    }
+    @media (max-width: 680px) {
+      [data-review-root] { padding: 18px 12px 28px; }
+      .topline { margin-left: -12px; margin-right: -12px; }
+      h1 { font-size: 21px; }
+      .metrics, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .metric { min-height: auto; }
+      .table { font-size: 11px; }
+      .table th, .table td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <main data-review-root>
+    <div class="hero">
+      <div class="logo">盘面</div>
+      <h1>大盘强弱与题材持续性判断框架</h1>
+      <p class="subtitle">长期维护版 · 2026-08-11 · 当天强弱看真实赚钱效应，隔日强弱看尾盘资金态度，题材持续性看梯队和容量。红色=强势/正反馈，绿色=弱势/风险。</p>
+      <div class="tags">
+        <span class="tag">当天大盘强弱</span>
+        <span class="tag">隔日强弱预判</span>
+        <span class="tag">题材持续性</span>
+        <span class="tag">连板梯队</span>
+      </div>
+    </div>
+    <div class="topline"></div>
+
+    <section class="metrics" data-required="metrics">
+      <div class="metric"><div class="label">当天判断</div><div class="value profit">赚钱效应</div><div class="note">涨停、炸板、广度、主线</div></div>
+      <div class="metric"><div class="label">隔日预判</div><div class="value gold">尾盘态度</div><div class="note">抢筹、抢跑、封单、补跌</div></div>
+      <div class="metric"><div class="label">题材持续</div><div class="value cyan">梯队容量</div><div class="note">高度、中军、扩散、反馈</div></div>
+      <div class="metric"><div class="label">强市动作</div><div class="value profit">重仓强股</div><div class="note">70%-90% 集中核心</div></div>
+      <div class="metric"><div class="label">弱市动作</div><div class="value loss">空仓轻仓</div><div class="note">0%-20% 先保现金</div></div>
+      <div class="metric"><div class="label">核心原则</div><div class="value blue">不看单点</div><div class="note">指数、广度、题材共振</div></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>一、总纲</div>
+      <div class="section-body">
+        <p class="lead">不要只看指数涨跌。A 股很多时候指数红但个股亏钱，或者指数弱但主线抱团很强。大盘强弱的核心，是资金是否愿意承担风险，赚钱效应是否扩散，亏钱效应是否收敛。</p>
+        <div class="quote">当天强弱看真实赚钱效应，隔日强弱看尾盘资金态度，题材持续性看梯队和容量。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>二、当天大盘强弱评分</div>
+      <div class="section-body">
+        <table class="table">
+          <thead><tr><th>维度</th><th>强势信号</th><th>弱势信号</th><th>分值</th></tr></thead>
+          <tbody>
+            <tr><td>指数位置</td><td class="profit">放量站上 5 日/10 日线</td><td class="loss">破位、跳水、冲高回落</td><td>15</td></tr>
+            <tr><td>成交量</td><td class="profit">放量上涨，量能支持进攻</td><td class="loss">缩量上涨或放量下跌</td><td>15</td></tr>
+            <tr><td>市场广度</td><td class="profit">上涨家数明显占优</td><td class="loss">指数被少数权重撑住</td><td>15</td></tr>
+            <tr><td>赚钱效应</td><td class="profit">涨停多、炸板少、连板晋级高</td><td class="loss">炸板多、跌停多、大面多</td><td>20</td></tr>
+            <tr><td>主线状态</td><td class="profit">主线清晰，有中军、有扩散</td><td class="loss">题材一日游，多方向抢资金</td><td>20</td></tr>
+            <tr><td>持仓反馈</td><td class="profit">持仓强于板块，买后浮盈</td><td class="loss">持仓弱于板块，反弹无承接</td><td>15</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-body grid-4">
+        <div class="card score"><div class="num profit">80-100</div><div class="state">强势进攻</div><span>70%-90%，重仓强势核心。</span></div>
+        <div class="card score"><div class="num cyan">70-79</div><div class="state">修复偏强</div><span>60%-75%，做主线中军和前排。</span></div>
+        <div class="card score"><div class="num blue">50-69</div><div class="state">震荡中性</div><span>30%-50%，只做确认机会。</span></div>
+        <div class="card score"><div class="num loss">0-49</div><div class="state">弱势防守</div><span>0%-20%，空仓或轻仓。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>三、盘中快速判断</div>
+      <div class="section-body grid-2">
+        <div class="card"><b class="gold">9:30-10:00 开盘定调</b><span>指数高开高走、成交放大、主线前排确认，偏强；冲高回落、前排炸板、后排跟不上，偏弱。</span></div>
+        <div class="card"><b class="cyan">10:00-11:30 主线确认</b><span>强市场是指数稳、主线扩散、核心不倒；弱市场是指数反弹、题材轮动、冲高回落。</span></div>
+        <div class="card"><b class="blue">13:00-14:30 午后回流</b><span>资金回流主线，核心重新走强，隔日预期改善；只拉低位杂毛，持续性存疑。</span></div>
+        <div class="card"><b class="profit">14:30-15:00 隔日态度</b><span>尾盘抢筹核心、封单稳定、炸板回封，隔日偏强；尾盘抢跑、核心漏单，隔日偏弱。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>四、隔日大盘强弱预判</div>
+      <div class="section-body grid-2" data-required="next-day-plan">
+        <div>
+          <table class="table">
+            <thead><tr><th>维度</th><th>隔日偏强</th><th>隔日偏弱</th></tr></thead>
+            <tbody>
+              <tr><td>今日收盘</td><td class="profit">收在日内高位</td><td class="loss">尾盘跳水</td></tr>
+              <tr><td>成交量</td><td class="profit">放量上涨或温和修复</td><td class="loss">缩量反弹或放量下跌</td></tr>
+              <tr><td>主线核心</td><td class="profit">核心封板稳，中军趋势强</td><td class="loss">核心炸板、补跌、长上影</td></tr>
+              <tr><td>连板梯队</td><td class="profit">高标不断，中位晋级</td><td class="loss">高标断板，中位大面</td></tr>
+              <tr><td>亏钱效应</td><td class="profit">跌停少，炸板能回封</td><td class="loss">跌停扩散，炸板亏钱严重</td></tr>
+              <tr><td>外部扰动</td><td class="profit">夜盘/外围/消息偏正面</td><td class="loss">外围大跌、监管利空、业绩雷</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-2">
+          <div class="card"><b class="profit">隔日偏强</b><span>保留核心仓，次日只买强更强或分歧转强。</span></div>
+          <div class="card"><b class="blue">隔日中性</b><span>降低预期，只做主线核心确认，不开杂票。</span></div>
+          <div class="card"><b class="loss">隔日偏弱</b><span>先处理风险，降低仓位，不急着抄底。</span></div>
+          <div class="card"><b class="gold">隔日分歧</b><span>等开盘 30 分钟确认，强者留，弱者走。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>五、题材持续性评分</div>
+      <div class="section-body">
+        <table class="table">
+          <thead><tr><th>维度</th><th>有持续性</th><th>无持续性</th></tr></thead>
+          <tbody>
+            <tr><td>高度</td><td class="profit">有 2 板以上高度或 20cm 核心走强</td><td class="loss">只有首日冲高，没有高度</td></tr>
+            <tr><td>梯队</td><td class="profit">高中低位完整，晋级顺畅</td><td class="loss">断层严重，只有独苗</td></tr>
+            <tr><td>容量</td><td class="profit">有成交额大的中军承接</td><td class="loss">全是小票，容量不足</td></tr>
+            <tr><td>扩散</td><td class="profit">前排扩散到产业链、中军、补涨</td><td class="loss">只拉少数后排，核心不动</td></tr>
+            <tr><td>分歧反馈</td><td class="profit">分歧后回流，炸板能回封</td><td class="loss">分歧后直接退潮</td></tr>
+            <tr><td>次日反馈</td><td class="profit">前排有溢价，后排不大亏</td><td class="loss">前排低开，后排大面</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="section-body grid-4">
+        <div class="card score"><div class="num profit">80-100</div><div class="state">主线题材</div><span>可做主仓，围绕核心反复做。</span></div>
+        <div class="card score"><div class="num cyan">60-79</div><div class="state">强支线</div><span>只做前排和中军，不追后排。</span></div>
+        <div class="card score"><div class="num blue">40-59</div><div class="state">轮动题材</div><span>快进快出，小仓试错。</span></div>
+        <div class="card score"><div class="num loss">0-39</div><div class="state">一日游</div><span>不参与或只观察。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>六、连板梯队观察</div>
+      <div class="section-body grid-3">
+        <div class="card"><b class="profit">高标</b><span>是否继续晋级，断板后是否温和。决定题材高度。</span></div>
+        <div class="card"><b class="cyan">中位</b><span>是否批量晋级，是否出现大面。决定赚钱效应。</span></div>
+        <div class="card"><b class="blue">低位</b><span>是否有首板补充，是否扩散到新分支。决定持续燃料。</span></div>
+        <div class="card"><b class="gold">20cm</b><span>是否有创业板/科创弹性核心。决定资金风险偏好。</span></div>
+        <div class="card"><b class="profit">中军</b><span>是否稳步走趋势，承接是否强。决定大资金能否参与。</span></div>
+        <div class="card"><b class="loss">危险结构</b><span>只有高标硬顶、后排大面，题材容易次日退潮。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>七、持仓与市场强弱联动</div>
+      <div class="section-body">
+        <table class="table">
+          <thead><tr><th>市场状态</th><th>持仓强弱</th><th>动作</th></tr></thead>
+          <tbody>
+            <tr><td class="profit">大盘强</td><td class="profit">持仓强于板块</td><td>持有或加到计划仓位</td></tr>
+            <tr><td class="profit">大盘强</td><td class="loss">持仓弱于板块</td><td>卖弱换强，不恋战</td></tr>
+            <tr><td>大盘弱</td><td class="profit">持仓强于板块</td><td>保留核心，不能加杂票</td></tr>
+            <tr><td class="loss">大盘弱</td><td class="loss">持仓弱于板块</td><td>先减仓，必要时退出</td></tr>
+            <tr><td>大盘假强</td><td class="loss">持仓不赚钱</td><td>不重仓，防止指数掩护出货</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>八、每日执行模板</div>
+      <div class="section-body grid-2">
+        <div class="card"><b class="gold">盘前</b><span>昨日市场分数、今日预判、仓位上限、主线题材、只允许买入的核心、今日绝对不做。</span></div>
+        <div class="card"><b class="cyan">收盘</b><span>今日市场分数、赚钱效应、主线是否持续、持仓是否强于板块、隔日预判、明日第一动作。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>九、最终规则</div>
+      <div class="section-body">
+        <ul class="checklist">
+          <li>大盘强，重仓强势股。</li>
+          <li>大盘弱，空仓或轻仓。</li>
+          <li>指数假强但个股不赚钱，不重仓。</li>
+          <li>题材没有梯队和容量，不重仓。</li>
+          <li>隔日预判偏弱，第二天先处理风险。</li>
+          <li>只有市场、题材、个股三者共振，才允许进攻。</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="footer" data-required="risk-notice">
+      仅作个人复盘与交易计划，不构成投资建议。参考：IBD 市场阶段框架、StockCharts/TradingView 市场广度、CME 风控原则。
+    </div>
+  </main>
+</body>
+</html>
