@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>100万本金回本计划</title>
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #141b2d;
+      --panel-2: #1b2438;
+      --line: #2b3652;
+      --text: #e9eef8;
+      --muted: #98a7bd;
+      --soft: #c9d4e8;
+      --red: #ff4d67;
+      --green: #27d391;
+      --cyan: #24d5ef;
+      --gold: #f3b84b;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        linear-gradient(180deg, rgba(34, 43, 69, 0.98), rgba(8, 13, 24, 0.99) 170px),
+        radial-gradient(circle at 16% 0%, rgba(167, 139, 250, 0.12), transparent 260px),
+        var(--bg);
+    }
+
+    [data-review-root] {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      padding: 24px 18px 34px;
+    }
+
+    .topline {
+      height: 2px;
+      margin: 0 -18px 22px;
+      background: linear-gradient(90deg, transparent, var(--purple), var(--cyan), transparent);
+      opacity: 0.78;
+    }
+
+    .hero { text-align: center; padding: 5px 0 18px; }
+
+    .logo {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 18px;
+      border: 2px solid rgba(167, 139, 250, 0.72);
+      background: radial-gradient(circle at 50% 22%, #37194d, #101827 64%);
+      box-shadow: 0 0 24px rgba(167, 139, 250, 0.42);
+    }
+
+    h1 { margin: 0; font-size: 26px; line-height: 1.25; font-weight: 850; }
+
+    .subtitle {
+      margin: 8px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+      max-width: 700px;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      border: 1px solid rgba(96, 165, 250, 0.42);
+      border-radius: 999px;
+      color: #cfe5ff;
+      background: rgba(96, 165, 250, 0.11);
+      font-size: 11px;
+      line-height: 1;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 10px 0 18px;
+    }
+
+    .metric {
+      min-height: 90px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid rgba(114, 128, 160, 0.2);
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    .metric .label { color: var(--muted); font-size: 11px; }
+    .metric .value { margin-top: 8px; font-size: 20px; font-weight: 850; line-height: 1.1; }
+    .metric .note { margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .red { color: var(--red); }
+    .green { color: var(--green); }
+    .cyan { color: var(--cyan); }
+    .gold { color: var(--gold); }
+    .blue { color: var(--blue); }
+    .purple { color: var(--purple); }
+
+    .section {
+      margin-top: 18px;
+      border-radius: 8px;
+      background: rgba(20, 27, 45, 0.94);
+      border: 1px solid rgba(114, 128, 160, 0.22);
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      background: rgba(27, 36, 56, 0.9);
+      border-bottom: 1px solid rgba(114, 128, 160, 0.18);
+    }
+
+    .bar {
+      width: 4px;
+      height: 18px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, var(--red), var(--gold));
+    }
+
+    .section-body { padding: 14px; }
+
+    .lead {
+      margin: 0;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .quote {
+      margin-top: 12px;
+      border-left: 3px solid var(--gold);
+      padding: 9px 10px;
+      color: #f8dfae;
+      background: rgba(243, 184, 75, 0.08);
+      border-radius: 0 8px 8px 0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .step {
+      border-radius: 8px;
+      background: rgba(8, 13, 24, 0.32);
+      border: 1px solid rgba(114, 128, 160, 0.18);
+      padding: 12px;
+      min-height: 150px;
+    }
+
+    .step .k { font-size: 11px; color: var(--muted); }
+    .step .target { margin-top: 8px; font-size: 18px; font-weight: 850; }
+    .step .gain { margin-top: 6px; font-size: 12px; color: var(--cyan); }
+    .step .do { margin-top: 10px; font-size: 12px; line-height: 1.55; color: var(--soft); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .rule {
+      border-radius: 8px;
+      border: 1px solid rgba(114, 128, 160, 0.18);
+      background: rgba(8, 13, 24, 0.3);
+      padding: 12px;
+    }
+
+    .rule b { display: block; margin-bottom: 6px; font-size: 13px; }
+    .rule span { color: var(--soft); font-size: 12px; line-height: 1.65; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .holding {
+      border-radius: 8px;
+      border: 1px solid rgba(114, 128, 160, 0.18);
+      background: rgba(8, 13, 24, 0.3);
+      padding: 12px;
+    }
+
+    .holding-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      border-bottom: 1px solid rgba(114, 128, 160, 0.16);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    .holding-name { font-size: 14px; font-weight: 820; }
+    .holding-pnl { font-size: 12px; white-space: nowrap; }
+    .holding p { margin: 0; color: var(--soft); font-size: 12px; line-height: 1.65; }
+
+    .months {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .month {
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px 9px;
+      background: rgba(8, 13, 24, 0.32);
+      border: 1px solid rgba(114, 128, 160, 0.18);
+    }
+
+    .month .rate { font-size: 18px; font-weight: 850; }
+    .month .time { margin-top: 7px; color: var(--muted); font-size: 11px; }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      border-radius: 8px;
+      padding: 10px 11px;
+      background: rgba(8, 13, 24, 0.3);
+      border: 1px solid rgba(114, 128, 160, 0.16);
+      color: var(--soft);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.7;
+      border-top: 1px solid rgba(114, 128, 160, 0.18);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 680px) {
+      [data-review-root] { padding: 18px 12px 28px; }
+      .topline { margin-left: -12px; margin-right: -12px; }
+      h1 { font-size: 21px; }
+      .metrics, .roadmap, .two-col, .cards, .months { grid-template-columns: 1fr; }
+      .metric { min-height: auto; }
+      .holding-head { align-items: flex-start; flex-direction: column; }
+      .holding-pnl { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main data-review-root>
+    <div class="hero">
+      <div class="logo">回本</div>
+      <h1>100万本金回本计划</h1>
+      <p class="subtitle">2026-08-11 · 账户总资产 835,850.43 · 当前仓位 98.3% · 目标不是赌一次大赚，而是把账户重新变成可执行、可纠错、可复利的状态。</p>
+      <div class="tags">
+        <span class="tag">资金曲线修复</span>
+        <span class="tag">仓位降风险</span>
+        <span class="tag">8-10个月标准路径</span>
+        <span class="tag">不加杠杆</span>
+      </div>
+    </div>
+    <div class="topline"></div>
+
+    <section class="metrics" data-required="metrics">
+      <div class="metric">
+        <div class="label">原始本金</div>
+        <div class="value gold">1,000,000</div>
+        <div class="note">回本锚点，不作为单日压力</div>
+      </div>
+      <div class="metric">
+        <div class="label">当前资产</div>
+        <div class="value cyan">835,850.43</div>
+        <div class="note">截图口径：2026-08-11 14:58</div>
+      </div>
+      <div class="metric">
+        <div class="label">回本缺口</div>
+        <div class="value red">164,149.57</div>
+        <div class="note">需要当前资产收益 +19.64%</div>
+      </div>
+      <div class="metric">
+        <div class="label">当前仓位</div>
+        <div class="value red">98.3%</div>
+        <div class="note">第一优先级：恢复现金</div>
+      </div>
+      <div class="metric">
+        <div class="label">标准月目标</div>
+        <div class="value green">2.0%-2.5%</div>
+        <div class="note">目标周期约 8-10 个月</div>
+      </div>
+      <div class="metric">
+        <div class="label">现金底线</div>
+        <div class="value blue">10%-15%</div>
+        <div class="note">没有现金，就没有主动权</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>一、总原则：先活下来，再回本</div>
+      <div class="section-body">
+        <p class="lead">当前账户距离 100 万本金还差 16.41 万，表面上看需要 19.64% 收益，真正的难点是仓位已经接近满仓。明日开始先把账户从“被行情牵着走”修复成“有现金、有止损、有选择权”的状态。</p>
+        <div class="quote">默认不采用激进回本路线。若为了回本焦虑把仓位继续推满，账户会失去纠错能力；这不是计划，是把下一次波动交给运气。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>二、四段式资金路线</div>
+      <div class="section-body">
+        <div class="roadmap">
+          <div class="step">
+            <div class="k">第 1 阶段 · 修复</div>
+            <div class="target">83.6万 → 88万</div>
+            <div class="gain">+44,149 · +5.28%</div>
+            <div class="do">降仓位、恢复现金，先把亏损扩大的通道关掉。</div>
+          </div>
+          <div class="step">
+            <div class="k">第 2 阶段 · 稳定</div>
+            <div class="target">88万 → 92万</div>
+            <div class="gain">累计 +84,149 · +10.07%</div>
+            <div class="do">只做 2-3 条强主线，减少杂票和情绪单。</div>
+          </div>
+          <div class="step">
+            <div class="k">第 3 阶段 · 复利</div>
+            <div class="target">92万 → 96万</div>
+            <div class="gain">累计 +124,149 · +14.85%</div>
+            <div class="do">顺风期放大利润，但单票风险不扩大。</div>
+          </div>
+          <div class="step">
+            <div class="k">第 4 阶段 · 收口</div>
+            <div class="target">96万 → 100万</div>
+            <div class="gain">累计 +164,149 · +19.64%</div>
+            <div class="do">降低进攻仓位，防止最后阶段大幅回吐。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>三、时间表：选标准路径，不选赌命路径</div>
+      <div class="section-body">
+        <div class="months">
+          <div class="month"><div class="rate blue">1.5%</div><div class="time">约 13 个月 · 防守修复</div></div>
+          <div class="month"><div class="rate green">2.0%</div><div class="time">约 10 个月 · 标准执行</div></div>
+          <div class="month"><div class="rate cyan">2.5%</div><div class="time">约 8 个月 · 进攻可控</div></div>
+          <div class="month"><div class="rate red">3.0%</div><div class="time">约 7 个月 · 不作默认</div></div>
+        </div>
+        <div class="quote">建议目标：8-10 个月回本。每月只要稳定拿到 2.0%-2.5%，比追求单月 10% 更适合当前账户状态。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>四、仓位修复与风控闸门</div>
+      <div class="section-body two-col">
+        <div class="rule"><b class="cyan">仓位修复</b><span>两周内从 98.3% 降到 75%-85%；恢复 10%-15% 现金。没有可用现金，不开新仓；想买新题材，必须先处理弱票或高位票。</span></div>
+        <div class="rule"><b class="gold">集中度上限</b><span>单票不超过 15%-18%；同一题材合计不超过 35%-40%。强势主线可以重，但不能把账户押成单点风险。</span></div>
+        <div class="rule"><b class="red">亏损闸门</b><span>日亏损 0.8%-1.0% 停止新开仓；周亏损 2.5%-3.0% 总仓位降到 50%-60%；月回撤 5% 暂停进攻 3-5 天。</span></div>
+        <div class="rule"><b class="green">单笔风险</b><span>每笔交易最大亏损控制在账户 0.5%-0.8%，约 4,000-6,700 元。先让错误变小，收益才有复利空间。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>五、结合当前持仓的明日处理</div>
+      <div class="section-body cards" data-required="next-day-plan">
+        <div class="holding">
+          <div class="holding-head"><span class="holding-name">隆华科技</span><span class="holding-pnl green">+7.28%</span></div>
+          <p>当前是利润垫来源。明日高开冲高先兑现 1/3-1/2，把浮盈变成现金；若放量继续强，再留底仓跟随。</p>
+        </div>
+        <div class="holding">
+          <div class="holding-head"><span class="holding-name">融发核电</span><span class="holding-pnl green">+2.20%</span></div>
+          <p>题材内浮盈仓。6.15 附近作为强弱线，跌破不硬扛；冲高可减一部分，把核电仓位降到更舒服的位置。</p>
+        </div>
+        <div class="holding">
+          <div class="holding-head"><span class="holding-name">汇川技术</span><span class="holding-pnl red">-0.88%</span></div>
+          <p>资金占用大，是恢复现金的重点观察对象。不能收回 64.50 上方，优先用可卖部分减压。</p>
+        </div>
+        <div class="holding">
+          <div class="holding-head"><span class="holding-name">浪潮信息</span><span class="holding-pnl red">-2.05%</span></div>
+          <p>波动大且处于浮亏，不补仓摊薄。若反抽不站回成本线，先降低风险暴露，避免拖累账户。</p>
+        </div>
+        <div class="holding">
+          <div class="holding-head"><span class="holding-name">沪硅产业</span><span class="holding-pnl red">-1.98%</span></div>
+          <p>若不能重新站回 26.10，优先作为现金修复来源之一。不要把弱反弹当成趋势反转。</p>
+        </div>
+        <div class="holding">
+          <div class="holding-head"><span class="holding-name">亚康/信维</span><span class="holding-pnl blue">观察仓</span></div>
+          <p>暂不加仓。只看是否强于板块，弱于板块就减少占用；现金修复完成前不扩大杂票数量。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>六、每日执行清单</div>
+      <div class="section-body">
+        <ul class="checklist">
+          <li>开盘前写下今日最大亏损额：不超过 6,700-8,400 元，触发后停止新开仓。</li>
+          <li>优先处理仓位结构：先把利润仓兑现一部分，再处理不能修复成本线的弱票。</li>
+          <li>只允许买入“主线清晰、盘口强、能设置止损”的标的；没有卖出动作，就没有买入动作。</li>
+          <li>收盘后记录三件事：是否执行降仓、是否有计划外交易、是否把亏损控制在阈值内。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>七、禁止事项</div>
+      <div class="section-body two-col">
+        <div class="rule"><b class="red">不为回本焦虑加仓</b><span>回本缺口越清晰，越不能把单日交易变成情绪赌博。</span></div>
+        <div class="rule"><b class="red">不补弱票摊成本</b><span>补仓必须基于新买点，不基于亏损不甘心。</span></div>
+        <div class="rule"><b class="red">不满仓追热门</b><span>没有现金时追题材，本质是用旧风险换新风险。</span></div>
+        <div class="rule"><b class="red">不把目标改成必须赚</b><span>每日目标是执行规则，不是一定盈利。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><span class="bar"></span>八、结论</div>
+      <div class="section-body">
+        <p class="lead">明天的第一目标不是把亏损赚回来，而是把账户从接近满仓修回 75%-85% 的可控区间。只要能持续保留现金、缩小单笔错误、让盈利仓贡献现金流，16.41 万缺口就可以拆成四个 4 万左右的小目标来完成。</p>
+      </div>
+    </section>
+
+    <div class="footer" data-required="risk-notice">
+      仅作个人复盘与交易计划，不构成投资建议。短线交易存在显著风险，计划核心是控制仓位、控制亏损、提高执行一致性，不承诺收益。
+      <br>风险参考：FINRA Day-Trading Risk Disclosure Statement；CME Group Trade and Risk Management: Controlling Risk。
+    </div>
+  </main>
+</body>
+</html>
