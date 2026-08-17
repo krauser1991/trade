@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>2026-08-17 14时A股盘中复盘与08-18潜伏指引</title>
+  <style>
+    :root{--bg:#081018;--panel:#101b26;--panel2:#0d1721;--line:#243647;--text:#edf4fb;--muted:#91a3b5;--red:#ff5f68;--green:#4bd6a0;--cyan:#4ed8f2;--blue:#6e9cff;--amber:#ffc764;--purple:#b09cff}
+    *{box-sizing:border-box}html,body{margin:0;background:#04090e;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.55}
+    body{padding:22px}.report{width:1120px;margin:0 auto;background:var(--bg);border:1px solid #162838;box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+    .hero{padding:42px 44px 34px;background:linear-gradient(135deg,#101e2c 0%,#0a131d 60%,#111b27 100%);border-bottom:1px solid var(--line);position:relative}
+    .hero:after{content:"";position:absolute;right:-100px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(78,216,242,.16),transparent 66%)}
+    .eyebrow{font-size:15px;letter-spacing:.16em;color:var(--cyan);font-weight:800}.hero h1{font-size:46px;line-height:1.16;margin:10px 0 12px;max-width:820px}.hero p{margin:0;color:var(--muted);font-size:17px}.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.chip{padding:7px 12px;border:1px solid #34506a;border-radius:6px;background:#0b1722;color:#cfe6f7;font-size:14px;font-weight:700}
+    .strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:18px 24px;background:#0a131c;border-bottom:1px solid var(--line)}.metric{padding:14px 12px;border:1px solid var(--line);background:var(--panel2);border-radius:8px}.metric .k{font-size:12px;color:var(--muted)}.metric .v{font-size:24px;font-weight:900;margin-top:2px}.metric .s{font-size:12px;color:#b8c6d2}.up{color:var(--red)}.hot{color:var(--amber)}.cool{color:var(--cyan)}
+    main{padding:30px 34px 42px}.section{margin:0 0 26px}.sec-title{display:flex;align-items:center;gap:12px;margin-bottom:13px}.num{display:grid;place-items:center;width:34px;height:34px;border-radius:7px;background:var(--cyan);color:#041018;font-weight:950}.sec-title h2{font-size:25px;margin:0}.sec-title small{color:var(--muted);font-size:13px;margin-left:auto}
+    .lead{padding:22px;border:1px solid #28556a;background:#0c202a;border-radius:9px;font-size:20px;font-weight:800}.lead strong{color:var(--cyan)}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:9px;padding:17px}.card h3{font-size:17px;margin:0 0 7px}.card p{margin:0;color:#bdcad6;font-size:14px}.tag{display:inline-flex;margin-top:10px;padding:3px 8px;border-radius:5px;font-size:12px;font-weight:800;background:#173247;color:var(--cyan)}.tag.red{background:#3a2025;color:#ff9aa0}.tag.amber{background:#382d18;color:#ffd98d}.tag.green{background:#17362d;color:#78e6bb}
+    table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--panel);table-layout:fixed}th,td{padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left;font-size:14px;word-break:break-word}th{background:#152331;color:#b9d3e5;font-size:13px}tr:last-child td{border-bottom:0}.rank{font-size:21px;font-weight:950;color:var(--cyan)}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:23px;align-items:stretch}.flow .node{position:relative;padding:15px 12px;text-align:center;border:1px solid #2e5268;background:#0d202b;border-radius:8px;font-weight:800}.flow .node:not(:last-child):after{content:"→";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--cyan);font-size:24px}
+    .signal{display:grid;grid-template-columns:1fr 1fr;gap:14px}.signal .card{min-height:145px}.signal ul{margin:8px 0 0;padding-left:20px;color:#c6d2dc;font-size:14px}.signal li{margin:5px 0}
+    .scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.scenario{padding:18px;border-radius:9px;border:1px solid var(--line);background:var(--panel)}.scenario h3{margin:0 0 8px;font-size:18px}.scenario p{margin:5px 0;color:#bdcad6;font-size:14px}.scenario.a{border-top:4px solid var(--red)}.scenario.b{border-top:4px solid var(--amber)}.scenario.c{border-top:4px solid var(--green)}
+    .theme{margin-bottom:15px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel)}.theme-head{display:flex;align-items:center;gap:10px;padding:15px 17px;background:#142331}.theme-head h3{margin:0;font-size:19px}.priority{margin-left:auto;font-size:12px;font-weight:900;padding:4px 8px;border-radius:5px;background:#273848;color:#d7e8f4}.theme table{border:0}.theme th:nth-child(1){width:15%}.theme th:nth-child(2){width:20%}.theme th:nth-child(3){width:17%}.theme th:nth-child(4){width:29%}.theme th:nth-child(5){width:19%}
+    .anchor{color:var(--amber);font-weight:800}.stock{font-weight:850}.quote{color:#ff929a;font-weight:800}.rule{padding:17px;border-left:4px solid var(--amber);background:#211c12;color:#f2ddb2;font-weight:750}
+    .sources{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sources .card{font-size:13px;color:#b8c7d3}.risk{padding:20px;border:1px solid #6d382f;background:#231615;border-radius:8px;color:#f2beb7}.footer{padding:22px 32px;text-align:center;color:#8194a5;border-top:1px solid var(--line);font-size:13px;background:#071018}
+    @media(max-width:720px){body{padding:0}.report{width:100%;border:0}.hero{padding:28px 20px}.hero h1{font-size:32px}.strip{grid-template-columns:repeat(2,1fr);padding:14px}.metric .v{font-size:21px}main{padding:22px 14px}.grid4,.scenarios,.signal,.sources{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow .node:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-26px}.sec-title small{display:none}.theme{overflow-x:auto}.theme table{min-width:850px}}
+  </style>
+</head>
+<body>
+<article class="report" data-report-root data-review-root>
+  <header class="hero">
+    <div class="eyebrow">A-SHARE INTRADAY PLAYBOOK · 14:22 SNAPSHOT</div>
+    <h1>科技硬件全面共振<br>尾盘不追高，明天等分歧</h1>
+    <p>2026-08-17 14时盘中复盘｜小胡投研线索验证｜08-18 潜伏板块与个股观察池</p>
+    <div class="chips"><span class="chip">主线：光通信 / NPO / CPO</span><span class="chip">扩散：PCB / CCL / 元件</span><span class="chip">潜伏：液冷 / 先进封装</span><span class="chip">盘中快照 ≠ 收盘结论</span></div>
+  </header>
+
+  <section class="strip" data-required="metrics">
+    <div class="metric"><div class="k">上证指数</div><div class="v up">+1.24%</div><div class="s">3975.80</div></div>
+    <div class="metric"><div class="k">深证成指</div><div class="v up">+2.21%</div><div class="s">14670.91</div></div>
+    <div class="metric"><div class="k">创业板指</div><div class="v up">+2.82%</div><div class="s">3728.49</div></div>
+    <div class="metric"><div class="k">科创50</div><div class="v up">+3.68%</div><div class="s">今日最强宽基</div></div>
+    <div class="metric"><div class="k">两市成交</div><div class="v hot">2.03万亿</div><div class="s">14:22 盘中</div></div>
+    <div class="metric"><div class="k">涨停 / 高度</div><div class="v cool">97 / 4板</div><div class="s">首板 82 家</div></div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="lead"><strong>一句话结论：</strong>今天不是“找新题材”，而是小胡投研提示的 AI 硬件产业链被盘口集中验证；尾盘只确认核心，明天只做分歧，不追一致加速。</div>
+    </section>
+
+    <section class="section">
+      <div class="sec-title"><span class="num">01</span><h2>盘面温度：放量普涨，但明天是淘汰赛</h2></div>
+      <div class="grid4">
+        <div class="card"><h3>风格</h3><p>科创50 ＞ 创业板 ＞ 深成指 ＞ 沪指，硬科技与高弹性成长占优。</p><span class="tag red">进攻</span></div>
+        <div class="card"><h3>情绪</h3><p>97 家涨停、82 家首板，扩散面很宽；明天首板晋级率比今天涨停数更重要。</p><span class="tag amber">高热</span></div>
+        <div class="card"><h3>高度</h3><p>4板 3 家、3板 2 家、2板 10 家，通信与 AI 硬件已有中低位晋级锚。</p><span class="tag">可验证</span></div>
+        <div class="card"><h3>风险</h3><p>高成交普涨后通常分化；尾盘加速、缩量一致和后排补涨最容易被兑现。</p><span class="tag green">保留现金</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sec-title"><span class="num">02</span><h2>小胡投研线索 × 今日盘口验证</h2><small>最新可核对内容：08-15 12:37–12:58，共 22 条</small></div>
+      <table>
+        <thead><tr><th style="width:19%">投研线索</th><th style="width:31%">核心逻辑</th><th style="width:30%">今日盘口验证</th><th style="width:20%">交易含义</th></tr></thead>
+        <tbody>
+          <tr><td><b>NPO / CPO</b></td><td>NPO、硅光、TIA/Driver、外置激光器、FAU 和高速 PCB 价值量提升。</td><td>太辰光 <span class="quote">+20%</span>；中际旭创 <span class="quote">+5.96%</span>；天孚通信 <span class="quote">+6.23%</span>；共进股份 3板。</td><td><span class="anchor">最强主线</span><br>涨停票只作锚</td></tr>
+          <tr><td><b>PCB / CCL</b></td><td>M10、Rubin/Feynman、高速覆铜板、微钻、电子布与铜箔的二阶弹性。</td><td>华正新材 2板；兴森科技、博敏电子涨停；金禄电子 <span class="quote">+20%</span>。</td><td><span class="anchor">主线扩散</span><br>观察中军补强</td></tr>
+          <tr><td><b>液冷 / Busbar</b></td><td>AIDC 电力瓶颈、液冷刚需、Busbar 与散热材料渗透。</td><td>中石科技 <span class="quote">+20% / 2板</span>；申菱环境 +7.56%；英维克 +2.29%。</td><td><span class="anchor">潜伏赔率</span><br>依赖强锚反馈</td></tr>
+          <tr><td><b>存储 / 先进封装</b></td><td>HBF/HBM、特色工艺高利用率、封测和湿电子化学品景气。</td><td>科创50 +3.68%；甬矽电子 +8.65%；澜起科技 +4.96%。</td><td><span class="anchor">风格共振</span><br>需两日确认</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <div class="sec-title"><span class="num">03</span><h2>资金扩散路径</h2></div>
+      <div class="flow">
+        <div class="node">科创50<br>风险偏好</div><div class="node">光模块<br>核心中军</div><div class="node">通信弹性<br>连板锚</div><div class="node">PCB / CCL<br>材料元件</div><div class="node">液冷 / 封装<br>二阶扩散</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sec-title"><span class="num">04</span><h2>尾盘观察与执行纪律</h2></div>
+      <div class="signal">
+        <div class="card"><h3>尾盘看三件事</h3><ul><li>上证能否守住 3970，科创50能否维持 3%以上。</li><li>中际旭创、天孚通信、澜起科技是否收在分时均价上方。</li><li>太辰光、中石科技、华正新材、兴森科技封单是否稳定。</li></ul></div>
+        <div class="card"><h3>尾盘只做两类动作</h3><ul><li>已持有核心：不破分时均线继续观察，尾盘加速不再加。</li><li>未持有：最多极小观察仓，只选未涨停、低于板块平均涨幅的中军。</li><li>至少保留 30%–40% 现金应对明天分化。</li></ul></div>
+      </div>
+      <div class="rule" style="margin-top:12px">禁止：排板 20% 涨停票｜追 PCB 涨停弹性｜把 97 家涨停等同于明天继续普涨｜因为化学制品涨停多就把轮动当主线。</div>
+    </section>
+
+    <section class="section" data-required="next-day-plan">
+      <div class="sec-title"><span class="num">05</span><h2>08-18 三种开盘情景</h2></div>
+      <div class="scenarios">
+        <div class="scenario a"><h3>强延续</h3><p><b>触发：</b>科创50不弱；易中天高开不跳水；太辰光/中石科技/华正新材至少两只封稳。</p><p><b>策略：</b>持有核心，回踩均线低吸中军；弹性票只做换手，不做一致加速。</p></div>
+        <div class="scenario b"><h3>分化换手 · 基准</h3><p><b>触发：</b>指数震荡，涨停锚分歧，但中军未破位。</p><p><b>策略：</b>去后排、留中军；看光模块向 PCB、液冷、先进封装内部轮动；仓位 40%–60%。</p></div>
+        <div class="scenario c"><h3>高开低走</h3><p><b>触发：</b>科创50回落；强锚炸板；中军跌破今日实体中位；首板晋级差。</p><p><b>策略：</b>停止潜伏，兑现跟风，只留有业绩且未破趋势的核心；仓位降至 30%以下。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sec-title"><span class="num">06</span><h2>潜伏板块与个股观察池</h2><small>涨停票仅为板块锚，不是买入清单</small></div>
+
+      <div class="theme"><div class="theme-head"><h3>① 光通信 / NPO / CPO</h3><span class="priority">主线最高｜只做分歧</span></div><table><thead><tr><th>角色</th><th>股票</th><th>盘中状态</th><th>明日触发</th><th>失效条件</th></tr></thead><tbody>
+        <tr><td>核心中军</td><td class="stock">中际旭创<br>300308</td><td class="quote">999.22 / +5.96%</td><td>高开不超 5%，回踩不破今日实体中位并有量承接。</td><td>高开低走并破今日低点。</td></tr>
+        <tr><td>器件中军</td><td class="stock">天孚通信<br>300394</td><td class="quote">284.40 / +6.23%</td><td>与中际同步强，分时回踩承接。</td><td>板块强而持续弱于均线。</td></tr>
+        <tr><td class="anchor">强度锚</td><td class="stock">太辰光<br>300570</td><td class="quote">193.80 / +20%</td><td>只观察封单和次日溢价。</td><td>炸板或次日大幅低开。</td></tr>
+      </tbody></table></div>
+
+      <div class="theme"><div class="theme-head"><h3>② PCB / CCL / 元件</h3><span class="priority">扩散次强｜潜伏中军</span></div><table><thead><tr><th>角色</th><th>股票</th><th>盘中状态</th><th>明日触发</th><th>失效条件</th></tr></thead><tbody>
+        <tr><td>趋势中军</td><td class="stock">胜宏科技<br>300476</td><td class="quote">275.79 / +2.40%</td><td>华正晋级，自身放量突破今日高点。</td><td>板块继续强而自身翻绿。</td></tr>
+        <tr><td>CCL中军</td><td class="stock">生益科技<br>600183</td><td class="quote">144.69 / +1.03%</td><td>元件延续，股价站回分时强势区。</td><td>仅小票加速，中军继续弱。</td></tr>
+        <tr><td class="anchor">强度锚</td><td class="stock">华正新材<br>603186</td><td class="quote">184.31 / +10% / 2板</td><td>只看晋级反馈。</td><td>断板且无承接。</td></tr>
+      </tbody></table></div>
+
+      <div class="theme"><div class="theme-head"><h3>③ 数据中心液冷 / 散热</h3><span class="priority">潜伏赔率最好｜看中石反馈</span></div><table><thead><tr><th>角色</th><th>股票</th><th>盘中状态</th><th>明日触发</th><th>失效条件</th></tr></thead><tbody>
+        <tr><td>趋势观察</td><td class="stock">英维克<br>002837</td><td class="quote">58.40 / +2.29%</td><td>中石正反馈，自身放量过今日高点。</td><td>中石炸板且英维克转弱。</td></tr>
+        <tr><td>高弹性</td><td class="stock">申菱环境<br>301018</td><td class="quote">99.60 / +7.56%</td><td>回踩均线企稳，不追高开。</td><td>高开超 7%后快速回落。</td></tr>
+        <tr><td>低位观察</td><td class="stock">高澜股份<br>300499</td><td class="quote">30.30 / +1.85%</td><td>板块扩散且成交温和放大。</td><td>板块强而个股持续弱势。</td></tr>
+        <tr><td class="anchor">强度锚</td><td class="stock">中石科技<br>300684</td><td class="quote">80.83 / +20% / 2板</td><td>只看晋级和封单。</td><td>大幅低开或快速炸板。</td></tr>
+      </tbody></table></div>
+
+      <div class="theme"><div class="theme-head"><h3>④ 半导体先进封装</h3><span class="priority">风格备选｜等两日确认</span></div><table><thead><tr><th>角色</th><th>股票</th><th>盘中状态</th><th>明日触发</th><th>失效条件</th></tr></thead><tbody>
+        <tr><td>封装弹性</td><td class="stock">甬矽电子<br>688362</td><td class="quote">73.87 / +8.65%</td><td>科创50不弱，回踩后重新放量。</td><td>冲高回落并破实体中位。</td></tr>
+        <tr><td>存储中军</td><td class="stock">澜起科技<br>688008</td><td class="quote">222.42 / +4.96%</td><td>存储/半导体继续共振，量价齐升。</td><td>科创50转弱且跌破均线。</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section">
+      <div class="sec-title"><span class="num">07</span><h2>来源与数据边界</h2></div>
+      <div class="sources">
+        <div class="card">新浪财经实时接口：指数、成交额和候选股盘中价格；抓取约 14:20–14:22。AkShare / 东方财富口径：今日涨停池、行业聚合和连板梯队。</div>
+        <div class="card">小胡投研：本地已留存的 08-15 最新 22 条主题及近一周归类。实时入口本次连接失败，因此未把 08-16 至 08-17 可能新增内容写成已覆盖。</div>
+      </div>
+      <div class="risk" style="margin-top:12px" data-required="risk-notice"><b>风险提示：</b>盘中数据会继续变化；首板 82 家意味着明天分化压力大。产业研报不等于订单公告，任何“潜伏”均须等待集合竞价、量价和核心锚反馈。<br><b>仅作个人复盘与交易计划，不构成投资建议。</b></div>
+    </section>
+
+    <div class="lead" style="text-align:center">主线确认看中军，分支延续看晋级；<strong>涨停票只作锚，潜伏只买分歧。</strong></div>
+  </main>
+  <footer class="footer">2026-08-17 14:22 · A股盘中快照 · 数据并非收盘口径</footer>
+</article>
+</body>
+</html>
