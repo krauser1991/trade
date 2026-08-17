@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>2026-08-17 收盘复盘与 08-18 操作指引</title>
+  <style>
+    :root{--bg:#071019;--panel:#101b26;--panel2:#0c1721;--line:#263a4b;--text:#eff6fc;--muted:#91a5b8;--red:#ff626c;--green:#4bd5a0;--cyan:#4ed7f1;--amber:#ffc45f;--blue:#76a2ff}
+    *{box-sizing:border-box}html,body{margin:0;background:#03080d;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.55}body{padding:22px}.report{width:1120px;margin:auto;background:var(--bg);border:1px solid #172b3b;box-shadow:0 26px 70px rgba(0,0,0,.5);overflow:hidden}
+    .hero{padding:42px 46px 35px;background:linear-gradient(135deg,#102131,#08131d 68%,#12202b);border-bottom:1px solid var(--line);position:relative}.hero:after{content:"";position:absolute;right:-90px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(78,215,241,.15),transparent 67%)}.eyebrow{font-size:15px;letter-spacing:.15em;color:var(--cyan);font-weight:900}.hero h1{font-size:47px;line-height:1.13;margin:10px 0 12px;max-width:850px}.hero p{margin:0;color:var(--muted);font-size:17px}.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.chip{padding:7px 12px;border:1px solid #35546b;border-radius:6px;background:#0a1722;color:#d4e7f5;font-size:14px;font-weight:800}
+    .markets{display:grid;grid-template-columns:repeat(7,1fr);gap:9px;padding:18px 22px;background:#09131c;border-bottom:1px solid var(--line)}.metric{padding:13px 10px;border:1px solid var(--line);background:var(--panel2);border-radius:8px}.metric .k{font-size:11px;color:var(--muted)}.metric .v{font-size:21px;font-weight:950;margin:3px 0}.metric .s{font-size:11px;color:#b7c6d2}.up{color:var(--red)}.cyan{color:var(--cyan)}.amber{color:var(--amber)}.green{color:var(--green)}
+    main{padding:30px 34px 42px}.section{margin-bottom:27px}.title{display:flex;align-items:center;gap:11px;margin-bottom:13px}.num{display:grid;place-items:center;width:35px;height:35px;border-radius:7px;background:var(--cyan);color:#031018;font-weight:950}.title h2{font-size:25px;margin:0}.title small{margin-left:auto;color:var(--muted)}.lead{padding:21px;border:1px solid #2d596d;background:#0c202a;border-radius:9px;font-size:20px;font-weight:850}.lead strong{color:var(--cyan)}
+    .account{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.acct{padding:16px;border:1px solid var(--line);background:var(--panel);border-radius:8px}.acct .k{font-size:12px;color:var(--muted)}.acct .v{font-size:21px;font-weight:900;margin-top:3px}.acct.wide{grid-column:span 2}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.card{padding:16px;border:1px solid var(--line);background:var(--panel);border-radius:8px}.card h3{font-size:17px;margin:0 0 7px}.card p{font-size:14px;color:#c0ced9;margin:0}.tag{display:inline-block;margin-top:10px;padding:3px 8px;border-radius:5px;font-size:12px;font-weight:900;background:#173347;color:var(--cyan)}.tag.red{background:#3c2025;color:#ffa0a5}.tag.amber{background:#3a2e17;color:#ffdc96}.tag.green{background:#17372e;color:#7ce4bb}
+    table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--panel);table-layout:fixed}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px;word-break:break-word}th{background:#152433;color:#c0d7e8;font-size:12px}tr:last-child td{border-bottom:0}.stock{font-weight:900}.quote{color:#ff8e96;font-weight:850}.weak{color:#80b9e9}.anchor{color:var(--amber);font-weight:900}
+    .exposure{display:grid;grid-template-columns:1.1fr .9fr;gap:13px}.barbox{padding:18px;border:1px solid var(--line);background:var(--panel);border-radius:8px}.barrow{display:grid;grid-template-columns:145px 1fr 55px;gap:10px;align-items:center;margin:12px 0;font-size:13px}.bar{height:13px;background:#182937;border-radius:8px;overflow:hidden}.fill{height:100%;background:var(--cyan)}.fill.amber{background:var(--amber)}.fill.red{background:var(--red)}.fill.green{background:var(--green)}
+    .holding{margin-bottom:13px;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel)}.holding-head{display:grid;grid-template-columns:1.3fr .8fr .8fr 1.1fr;gap:10px;padding:15px 17px;background:#142433;align-items:center}.holding-head h3{font-size:19px;margin:0}.holding-head div{font-size:13px}.plan{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}.plan div{padding:14px 16px;border-right:1px solid var(--line);font-size:13px;color:#c2d0db}.plan div:last-child{border-right:0}.plan b{display:block;color:var(--text);margin-bottom:4px;font-size:14px}
+    .scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.scenario{padding:18px;border:1px solid var(--line);background:var(--panel);border-radius:9px}.scenario h3{margin:0 0 8px;font-size:18px}.scenario p{margin:5px 0;color:#bdccd7;font-size:14px}.scenario.a{border-top:4px solid var(--red)}.scenario.b{border-top:4px solid var(--amber)}.scenario.c{border-top:4px solid var(--green)}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.time{padding:17px;border:1px solid var(--line);background:var(--panel);border-radius:8px}.time h3{margin:0 0 8px;color:var(--cyan);font-size:17px}.time ul{margin:0;padding-left:18px;color:#c2d0db;font-size:13px}.time li{margin:5px 0}.rule{padding:18px;border-left:4px solid var(--amber);background:#211b10;color:#f4ddb0;font-weight:850}.risk{padding:19px;border:1px solid #6e3a32;background:#251616;border-radius:8px;color:#efbbb5;font-size:14px}.footer{padding:22px;text-align:center;border-top:1px solid var(--line);background:#061019;color:#8196a8;font-size:13px}
+    @media(max-width:720px){body{padding:0}.report{width:100%;border:0}.hero{padding:28px 19px}.hero h1{font-size:32px}.markets{grid-template-columns:repeat(2,1fr);padding:13px}.account{grid-template-columns:repeat(2,1fr)}.acct.wide{grid-column:span 2}main{padding:22px 14px}.grid4,.exposure,.scenarios,.timeline{grid-template-columns:1fr}.holding{overflow-x:auto}.holding-head,.plan{min-width:800px}.title small{display:none}table{min-width:850px}.section{overflow-x:auto}}
+  </style>
+</head>
+<body>
+<article class="report" data-report-root data-review-root>
+  <header class="hero">
+    <div class="eyebrow">A-SHARE CLOSE REVIEW · 2026-08-17</div>
+    <h1>放量普涨后的关键一夜<br>账户盈利，但明天先去弱</h1>
+    <p>今日大盘复盘｜账户风险敞口｜可见持仓逐股处理｜2026-08-18 操作指引</p>
+    <div class="chips"><span class="chip">科创50 +4.14%</span><span class="chip">两市成交约 2.39 万亿</span><span class="chip">106 家涨停</span><span class="chip">账户 +13,837 / +1.61%</span><span class="chip">截图时间 15:09</span></div>
+  </header>
+
+  <section class="markets" data-required="metrics">
+    <div class="metric"><div class="k">上证指数</div><div class="v up">+1.41%</div><div class="s">3982.65</div></div>
+    <div class="metric"><div class="k">深证成指</div><div class="v up">+2.44%</div><div class="s">14704.27</div></div>
+    <div class="metric"><div class="k">创业板指</div><div class="v up">+3.14%</div><div class="s">3740.16</div></div>
+    <div class="metric"><div class="k">沪深300</div><div class="v up">+1.61%</div><div class="s">4741.10</div></div>
+    <div class="metric"><div class="k">科创50</div><div class="v up">+4.14%</div><div class="s">今日最强</div></div>
+    <div class="metric"><div class="k">两市成交</div><div class="v amber">2.39万亿</div><div class="s">高成交</div></div>
+    <div class="metric"><div class="k">涨停 / 高度</div><div class="v cyan">106 / 4板</div><div class="s">首板 91 家</div></div>
+  </section>
+
+  <main>
+    <section class="section"><div class="lead"><strong>一句话结论：</strong>今天是科技成长主导的放量普涨；账户赚到钱，但 +1.61% 明显弱于科创50。明天不再扩大仓位，先保科技核心、兑现弱跟随、确认标准券能否释放现金。</div></section>
+
+    <section class="section">
+      <div class="title"><span class="num">01</span><h2>市场复盘：不是护盘，是成长进攻</h2></div>
+      <div class="grid4">
+        <div class="card"><h3>风格</h3><p>科创50 ＞ 创业板 ＞ 深成指 ＞ 沪指，半导体和AI硬件承担进攻。</p><span class="tag red">科技成长</span></div>
+        <div class="card"><h3>成交</h3><p>两市约2.39万亿元，行情有承载力；高成交也意味着明天分歧会放大。</p><span class="tag amber">放量</span></div>
+        <div class="card"><h3>情绪</h3><p>106家涨停、91家首板，但2板仅10家。明天看晋级率，不再看涨停总数。</p><span class="tag">扩散高潮</span></div>
+        <div class="card"><h3>主线</h3><p>AI硬件/半导体最强，PCB/元件扩散；医药有高度，化工更偏轮动。</p><span class="tag green">结构行情</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="title"><span class="num">02</span><h2>题材强度地图</h2></div>
+      <table><thead><tr><th style="width:17%">方向</th><th style="width:18%">强度证据</th><th style="width:30%">代表锚</th><th style="width:35%">明日判断</th></tr></thead><tbody>
+        <tr><td><b>AI硬件 / 半导体</b></td><td class="quote">科创50 +4.14%</td><td>中芯国际、中际旭创、天孚通信、中石科技、中瓷电子</td><td><span class="anchor">最强主线</span>；中军高开不跳水才可延续。</td></tr>
+        <tr><td><b>PCB / 元件</b></td><td>4家涨停 / 最高2板</td><td>华正新材、兴森科技、博敏电子、金禄电子</td><td>主线扩散；不追涨停后排，看中军补强。</td></tr>
+        <tr><td><b>医药</b></td><td>4板+3板+2板梯队</td><td>澳洋健康、神奇制药、华森制药</td><td>情绪高度完整；账户迪哲弱跟随，需单独处理。</td></tr>
+        <tr><td><b>化学制品</b></td><td>8家涨停 / 数量居首</td><td>圣达生物、雅运股份、百合花</td><td>广度强但逻辑分散，暂按轮动而非唯一主线。</td></tr>
+        <tr><td><b>机器人 / 汽车零部</b></td><td>汽车零部4家涨停</td><td>正裕工业、今飞凯达、斯菱智驱</td><td>斯菱非前排，只有突破今日高点才转强。</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="section">
+      <div class="title"><span class="num">03</span><h2>账户总览：名义满仓，风险仓约七成</h2><small>账户截图 15:09</small></div>
+      <div class="account">
+        <div class="acct wide"><div class="k">总资产</div><div class="v">873,569.12</div></div>
+        <div class="acct"><div class="k">当日盈亏</div><div class="v up">+13,837.08</div></div>
+        <div class="acct"><div class="k">当日收益率</div><div class="v up">+1.61%</div></div>
+        <div class="acct"><div class="k">总盈亏</div><div class="v up">+23,277.14</div></div>
+        <div class="acct"><div class="k">可用资金</div><div class="v amber">434.12</div></div>
+        <div class="acct"><div class="k">券商仓位</div><div class="v amber">99.9%</div></div>
+        <div class="acct"><div class="k">标准券</div><div class="v cyan">236,000</div></div>
+        <div class="acct"><div class="k">标准券占比</div><div class="v cyan">约27.0%</div></div>
+      </div>
+      <div class="exposure" style="margin-top:13px">
+        <div class="barbox"><h3 style="margin:0 0 8px">可见资产结构</h3>
+          <div class="barrow"><span>通信/半导体</span><div class="bar"><div class="fill" style="width:33.3%"></div></div><b>33.3%</b></div>
+          <div class="barrow"><span>标准券</span><div class="bar"><div class="fill amber" style="width:27%"></div></div><b>27.0%</b></div>
+          <div class="barrow"><span>机器人/工业</span><div class="bar"><div class="fill red" style="width:12.5%"></div></div><b>12.5%</b></div>
+          <div class="barrow"><span>医药</span><div class="bar"><div class="fill green" style="width:9.1%"></div></div><b>9.1%</b></div>
+          <div class="barrow"><span>材料/化工</span><div class="bar"><div class="fill" style="width:6.1%"></div></div><b>6.1%</b></div>
+          <div class="barrow"><span>截图未展示</span><div class="bar"><div class="fill amber" style="width:12%"></div></div><b>12.0%</b></div>
+        </div>
+        <div class="card"><h3>风险解释</h3><p>券商显示99.9%，但标准券约占27%。若其明日可到期或回转，实际股票风险仓可能约73%。必须确认标准券可用日及截图下方约10.5万元未展示持仓，不能机械按“纯股票满仓”处理。</p><span class="tag amber">先确认资金属性</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="title"><span class="num">04</span><h2>可见持仓逐股处理</h2><small>弱票反弹减，核心破位也减</small></div>
+
+      <div class="holding"><div class="holding-head"><h3>中兴通讯 · 通信核心</h3><div>4300股<br>市值154,886</div><div class="quote">36.02 / +2.77%</div><div>账户浮盈 +2,198.96 / +1.44%</div></div><div class="plan"><div><b>持有条件</b>35.50上方；放量突破36.20继续看强。</div><div><b>减仓条件</b>跌破35.30且通信转弱，减1/3。</div><div><b>失效条件</b>跌破34.80，不以“中军”名义硬扛。</div></div></div>
+
+      <div class="holding"><div class="holding-head"><h3>中芯国际 · 半导体容量核心</h3><div>600股<br>市值82,056</div><div class="quote">136.76 / +2.93%</div><div>账户浮盈 +2,471 / +3.10%</div></div><div class="plan"><div><b>持有条件</b>134–135上方；突破137.42继续观察。</div><div><b>减仓条件</b>跌破132且科创50同步转弱，减1/3。</div><div><b>注意</b>涨幅弱于科创50，是容量仓，不是最强弹性。</div></div></div>
+
+      <div class="holding"><div class="holding-head"><h3>迪哲医药-U · 医药弱跟随</h3><div>1300股<br>市值79,729</div><div class="quote">61.33 / +0.69%</div><div>账户浮盈 +293.92 / +0.37%</div></div><div class="plan"><div><b>持有条件</b>医药正反馈并突破62.45。</div><div><b>减仓条件</b>反弹61.80–62.30仍无量，减1/3。</div><div><b>失效条件</b>跌破59.58，明显降低仓位；禁止补弱。</div></div></div>
+
+      <div class="holding"><div class="holding-head"><h3>金太阳 · 冲高回落</h3><div>1400股<br>市值54,754</div><div class="weak">39.11 / 0%</div><div>账户浮盈 +1,870.18 / +3.54%</div></div><div class="plan"><div><b>反弹兑现</b>39.50–40.00不能放量，减1/3。</div><div><b>重新转强</b>只有突破40.81才恢复强势评价。</div><div><b>失效条件</b>跌破38先降；跌破37.05退出。</div></div></div>
+
+      <div class="holding"><div class="holding-head"><h3>斯菱智驱 · 机器人后排</h3><div>600股<br>市值54,384</div><div class="quote">90.64 / +1.93%</div><div>账户几乎持平</div></div><div class="plan"><div><b>持有条件</b>机器人延续并突破91.74。</div><div><b>减仓条件</b>跌破88.90减1/3。</div><div><b>失效条件</b>跌破86.78退出或仅留观察仓。</div></div></div>
+
+      <div class="holding"><div class="holding-head"><h3>科创半导 · 科技贝塔仓</h3><div>50000份<br>市值53,850</div><div class="quote">1.077 / 成本1.040</div><div>账户浮盈 +1,844.70 / +3.55%</div></div><div class="plan"><div><b>持有条件</b>科创50不弱，基金继续跟随。</div><div><b>减仓条件</b>指数强而基金滞涨，减1/4。</div><div><b>风险处理</b>科技高开低走时，ETF优先于中芯降低；代码待确认。</div></div></div>
+
+      <div class="holding"><div class="holding-head"><h3>元力股份 · 非主线观察仓</h3><div>2500股<br>市值52,875</div><div class="quote">21.15 / +2.03%</div><div>账户浮亏 -30.73 / -0.06%</div></div><div class="plan"><div><b>持有条件</b>20.80上方；突破21.40可继续。</div><div><b>减仓逻辑</b>需要释放现金时，优先级低于中兴、中芯。</div><div><b>失效条件</b>跌破20.20，退出或大幅降低。</div></div></div>
+    </section>
+
+    <section class="section" data-required="next-day-plan">
+      <div class="title"><span class="num">05</span><h2>08-18 三种市场情景</h2></div>
+      <div class="scenarios">
+        <div class="scenario a"><h3>科技强延续</h3><p><b>触发：</b>科创50不回落，科技中军承接，2板锚晋级。</p><p><b>操作：</b>保留中兴、中芯、科创半导；金太阳/斯菱只有破今日高点才留强；不追加新仓。</p></div>
+        <div class="scenario b"><h3>分化换手 · 基准</h3><p><b>触发：</b>指数震荡，中军未破，但首板大量淘汰。</p><p><b>操作：</b>先处理金太阳、迪哲、斯菱中的弱者；股票风险仓控制65%–75%；10点前不追题材。</p></div>
+        <div class="scenario c"><h3>高开低走</h3><p><b>触发：</b>科创50跌破开盘价，科技中军同步回落，高位集中断板。</p><p><b>操作：</b>先减金太阳、斯菱、迪哲、元力；科创半导减1/4–1/3；风险仓降至50%–60%。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="title"><span class="num">06</span><h2>明日盘中执行时间表</h2></div>
+      <div class="timeline">
+        <div class="time"><h3>9:15–9:25</h3><ul><li>确认标准券可用状态</li><li>看科技中军竞价</li><li>看医药高位反馈</li><li>核对未展示持仓</li></ul></div>
+        <div class="time"><h3>9:30–10:00</h3><ul><li>不新开仓</li><li>先看中兴、中芯承接</li><li>弱票到线直接减</li><li>高开跌破开盘价锁盈</li></ul></div>
+        <div class="time"><h3>10:00–10:30</h3><ul><li>指数+中军+梯队共振才留高仓</li><li>分化降至65%–75%</li><li>弱势降至50%–60%</li></ul></div>
+        <div class="time"><h3>尾盘</h3><ul><li>只留强于板块的核心</li><li>不让浮盈回到成本</li><li>现金不重新打满</li></ul></div>
+      </div>
+      <div class="rule" style="margin-top:13px">禁止动作：普涨次日继续满仓追高｜给弱跟随补仓｜把标准券机械视为股票风险仓或可用现金｜忽略截图下方未展示持仓。</div>
+    </section>
+
+    <section class="section">
+      <div class="title"><span class="num">07</span><h2>风险与数据边界</h2></div>
+      <div class="risk" data-required="risk-notice">账户截图只显示到元力股份，下方可能还有约10.5万元持仓；“科创半导”代码未显示；标准券可用性取决于品种、到期日和券商规则。全市场涨跌家数接口本次异常，因此未填未经核实数据。指数与个股采用新浪收盘行情，涨停池采用AkShare/东方财富口径。<br><b>仅作个人复盘与交易计划，不构成投资建议。</b></div>
+    </section>
+
+    <div class="lead" style="text-align:center">先确认标准券，先看科技中军；<strong>弱票反弹减，强票破位也减；普涨之后不再打满。</strong></div>
+  </main>
+  <footer class="footer">2026-08-17 收盘复盘 · 账户截图 15:09 · 数据已按收盘口径刷新</footer>
+</article>
+</body>
+</html>
